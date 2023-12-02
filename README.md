@@ -1,9 +1,5 @@
-# doc-template
-Dev documentation template (one file)
+# Vital Sonics Design Log
 
-![joelthorner github io_doc-template_](https://github.com/joelthorner/doc-template/assets/16495000/ff9b1e71-97af-42d6-8fd8-fb53d875a64d)
+Clone this repo to a local folder
 
-------------------
-Designed with ❤️ by [Xiaoying Riley](https://github.com/xriley) for developers
-
-Modified with 🔥 by [joelthorner](https://github.com/joelthorner) for developers
+Everything lives in `index.html`, so add anything you need to in there
