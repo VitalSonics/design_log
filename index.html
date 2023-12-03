@@ -335,6 +335,17 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link scrollto" href="#item-3-2">Mechanical Design</a>
+                <ul class="nav flex-column mt-1 lvl3">
+                  <li class="nav-item section-child">
+                    <a class="nav-link scrollto" href="#item-3-2-1">Main Body</a>
+                  </li>
+                  <li class="nav-item section-child">
+                    <a class="nav-link scrollto" href="#item-3-2-2">Mic Interface</a>
+                  </li>
+                  <li class="nav-item section-child">
+                    <a class="nav-link scrollto" href="#item-3-2-3">FEA</a>
+                  </li>
+                </ul>
               </li>
               <!-- <li class="nav-item">
                 <a class="nav-link scrollto" href="#item-3-3">Battery</a>
@@ -342,7 +353,7 @@
             </ul>
           </li>
 
-          <li class="nav-item section-title">
+          <!-- <li class="nav-item section-title">
             <a class="nav-link scrollto" href="#section-4">Integrations</a>
             <ul class="nav flex-column mt-2 lvl2">
               <li class="nav-item">
@@ -430,7 +441,7 @@
                 <a class="nav-link scrollto" href="#item-9-3">Section Item 9.3</a>
               </li>
             </ul>
-          </li>
+          </li> -->
         </ul>
       </nav>
     </div>
@@ -1103,67 +1114,85 @@
             <p>Here, we start with the high level signal flow in our system. We start with the raw analog signal of the bodily sounds. This signal is fed into an analog circuit. It is converted into a digital signal using an ADC, and then sent on for digital processing. After digital processing, it is sent to the desktop application for visualization and storage (telehealth).</p>
             <img src="assets/high_level_sig_flow.png" 
               class="mb-3 img-fluid img-thumbnail">
+              <br>
+            <p>Now, we will focus on the Analog processing block. This block consists of a microphone, filter and amplification stage. The processed analog signal is then sent on to be converted into a digital signal.</p>
+            <img src="assets/high_level_analog_block.png" 
+              class="mb-3 img-fluid img-thumbnail"> <br>
+            <p>Next, the signal is converted into a digital signal. Then, we send it to our microprocessor and then eventually communicated to the desktop application via Bluetooth.</p>
+            <img src="assets/high_level_dig.png" 
+              class="mb-3 img-fluid img-thumbnail"> <br>
+            <p>Inside the processing block, we have the following structure/flow:</p>
+            <img src="assets/high_level_mp.png" 
+              class="mb-3 img-fluid img-thumbnail"> <br>
           </section>
-
 
           <section class="docs-section" id="item-3-1-2">
             <h2 class="section-heading">Filter Design</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+            <p>This is an important part of our product design. The main function of these filters is to distinguish between cardio and pulmonary sounds. The heart and lungs produce sounds in different frequency ranges. For the heart the range is 20-650Hz and for the lungs its 100-1000Hz. The purpose of these filters is to isolate those sounds as best as possible. Both filters are Butterworth filters.
+              <br><br>
+            The cardiac filter is shown below (designed in MATLAB). Since 20Hz is close to 0, a low pass filter can be used.<br><br>
+            <img src="assets/cardiac_filter.png" 
+              class="mb-3 img-fluid img-thumbnail"> <br>
+            </p>
+          <br>
+          The pulmonary filter is shown below. This is a band pass filter with the cutoff frequencies as described above.<br><br>
+          <img src="assets/pulmonary_filter.png" 
+            class="mb-3 img-fluid img-thumbnail">
           </section>
-
 
           <section class="docs-section" id="item-3-1-3">
             <h2 class="section-heading">Component Selection</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+            <h4>Microphone:</h4><br>
+            <p>This section will cover the logic behind the microphone and microcontroller selection.<br><br>
+            The microphone selected was the Adafruit I2S MEMS Microphone Breakout - SPH0645LM4H. This is a digital microphone. This mic was selected because it has digital output. All the analog-to-digital conversion is handled by the board. <br><br> It is a MEMS mic so it has a small form factor, which is useful for our application.<br><br> The output is in I2S format, which is standard for digital audio. This is well-documented and compatiable with ESP32 boards.<br><br> Most importantly, this mic has a <b>flat frequency response!</b> This is important because we want the highest quality signal possible. We might need to do some amplification for sub 100Hz frequencies.
+            </p>
+            <img src="assets/dig_mic.png" 
+              class="mb-3 img-fluid img-thumbnail" data-action="zoom">
+            <img src="assets/dig_mic_freq_res.png" 
+            class="mb-3 img-fluid img-thumbnail" data-action="zoom">
+            <h4>Microcontroller:</h4><br>
+            <p>The microcontroller selected is the ESP32-DEVKITC-32E. <br><br> This was selected because it <b>supports I2S</b> (so compatible with the MEMS mic), has <b>Bluetooth</b> capabilities, features <b>520kB of RAM, 4MB of flash memory</b>, and is small enough to fit in the housing of our digital stethoscope.
+            </p>
+            <img src="assets/esp.png" 
+              class="mb-3 img-fluid img-thumbnail" data-action="zoom">
           </section>
 
 
-          <section class="docs-section" id="item-3-2">
+          <section id="item-3-2">
             <h2 class="section-heading">Mechanical Design</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+            <p>This section covers the mechanical component of this project. Further details will be added in the future, but for now, this section will go in depth into the microphone interface (the part of the device that contacts the patient's body).</p>
           </section>
 
           <section class="docs-section" id="item-3-2-1">
             <h2 class="section-heading">Main Body</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+            <p>The main body has a rectangular form. The main surface facing the user will have basic controls (different filter and amplification controls). On the bottom, there are cutouts for the power switch, AUX out port, and USB-C port.</p> <br><br>
+            <img src="assets/cad_1.png" 
+              class="mb-3 img-fluid img-thumbnail" data-action="zoom">
+              <img src="assets/cad_2.png" 
+              class="mb-3 img-fluid img-thumbnail" data-action="zoom">
+              <img src="assets/cad_3.png" 
+              class="mb-3 img-fluid img-thumbnail" data-action="zoom">
           </section>
-
 
           <section class="docs-section" id="item-3-2-2">
             <h2 class="section-heading">Mic Interface</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+            <p>The mic interface consists of 4 main elements. Below, you'll see the assembled interface and then the deconstructed interface.</p><br>
+            <img src="assets/mic_interface.png" 
+              class="mb-3 img-fluid img-thumbnail" data-action="zoom">
+              <img src="assets/mic_interface_decon.png" 
+              class="mb-3 img-fluid img-thumbnail" data-action="zoom">
+            <br>
+            <p>The 4 main elements (from right to left) are the: outer ring (contacts skin), pop filter cover, pop filter (to reduce environmental noise), and MEMS microphone.</p>
+            <p>Additionally, the mic interface swivels to adapt to the shape of the contact surface. Not everyone has the same body shape, so this is important.</p>
           </section>
-
 
           <section class="docs-section" id="item-3-2-3">
             <h2 class="section-heading">FEA</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+            <p>We performed finite element analysis on the mic interface surface in Solidworks because this is where we expect the greatest load. The interface will be pressed right against the patient, and this could end up being a point of failure. <br><br> We ran the simulation with 50N/m<sup>2</sup> distributed load applied across the contact surface of the mic interface.</p>
+            <img src="assets/fea_1.png" 
+              class="mb-3 img-fluid img-thumbnail"><br>
+            <p>After running the simulation, we observed a negligible resultant displacement of 1.54x10<sup>-4</sup> mm. This is essentially 0mm of play. This makes sense, because this application does not involve high forces. We are confident in the design and material selection (ABS).</p>
           </section>
-
 
           <!-- <section class="docs-section" id="item-3-3">
             <h2 class="section-heading">Battery</h2>
@@ -1177,7 +1206,7 @@
         </article>
 
 
-        <article class="docs-article" id="section-4">
+        <!-- <article class="docs-article" id="section-4">
           <header class="docs-header">
             <h1 class="docs-heading">Intergrations</h1>
             <section class="docs-intro">
@@ -1503,7 +1532,7 @@
             </p>
           </section>
 
-        </article>
+        </article> -->
 
         <footer class="footer">
           <div class="container text-center py-5">
