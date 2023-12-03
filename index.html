@@ -288,11 +288,11 @@
           </li>
 
           <li class="nav-item section-title">
-            <a class="nav-link scrollto" href="#section-2">Installation</a>
+            <a class="nav-link scrollto" href="#section-2">General Information</a>
             <ul class="nav flex-column mt-2 lvl2">
               <li class="nav-item">
-                <a class="nav-link scrollto" href="#item-2-1">Section Item 2.1 +</a>
-                <ul class="nav flex-column mt-1 lvl3">
+                <a class="nav-link scrollto" href="#item-2-1">Problem Statement</a>
+                <!-- <ul class="nav flex-column mt-1 lvl3">
                   <li class="nav-item section-child">
                     <a class="nav-link scrollto" href="#item-2-1-1">Section Item 2.1.1</a>
                   </li>
@@ -302,29 +302,43 @@
                   <li class="nav-item section-child">
                     <a class="nav-link scrollto" href="#item-2-1-3">Section Item 2.1.3</a>
                   </li>
-                </ul>
+                </ul> -->
               </li>
               <li class="nav-item">
-                <a class="nav-link scrollto" href="#item-2-2">Section Item 2.2</a>
+                <a class="nav-link scrollto" href="#item-2-2">Goals and Objectives</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link scrollto" href="#item-2-3">Section Item 2.3</a>
+                <a class="nav-link scrollto" href="#item-2-3">Constraints and Criteria</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link scrollto" href="#item-2-4">Project Timeline</a>
               </li>
             </ul>
           </li>
 
           <li class="nav-item section-title">
-            <a class="nav-link scrollto" href="#section-3">APIs</a>
+            <a class="nav-link scrollto" href="#section-3">Engineering Design</a>
             <ul class="nav flex-column mt-2 lvl2">
               <li class="nav-item">
-                <a class="nav-link scrollto" href="#item-3-1">Section Item 3.1</a>
+                <a class="nav-link scrollto" href="#item-3-1">Electroacoustic Signal Processing</a>
+                <ul class="nav flex-column mt-1 lvl3">
+                  <li class="nav-item section-child">
+                    <a class="nav-link scrollto" href="#item-3-1-1">Block Diagrams</a>
+                  </li>
+                  <li class="nav-item section-child">
+                    <a class="nav-link scrollto" href="#item-3-1-2">Filter Design</a>
+                  </li>
+                  <li class="nav-item section-child">
+                    <a class="nav-link scrollto" href="#item-3-1-3">Component Selection</a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link scrollto" href="#item-3-2">Section Item 3.2</a>
+                <a class="nav-link scrollto" href="#item-3-2">Mechanical Design</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link scrollto" href="#item-3-3">Section Item 3.3</a>
-              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link scrollto" href="#item-3-3">Battery</a>
+              </li> -->
             </ul>
           </li>
 
@@ -849,7 +863,6 @@
               class="mb-3 img-fluid img-thumbnail" data-action="zoom">
               <br><br>
             <p>More details about the CAD and mic interface can be found in the Mechanical subsection of this website.</p>
-            <br><br>
             <p>For our main components, we have the following.</p>
             <ul>
               <li>
@@ -920,28 +933,23 @@
         </article>
 
         <article class="docs-article" id="section-2">
-          <header class="docs-header">
-            <h1 class="docs-heading">Installation</h1>
+          <header>
+            <h1 class="docs-heading">General Information</h1>
             <section class="docs-intro">
-              <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus
-                condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh
-                convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce
-                in malesuada odio.</p>
+              <p>Here you'll find information like our problem statement, goals and objectives, contraints and criteria, and project timeline</p>
             </section>
           </header>
 
-
           <section class="docs-section" id="item-2-1">
-            <h2 class="section-heading">Section Item 2.1</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+            <h2 class="section-heading">Problem Statement</h2>
+            <p>With the decline of auscultation skill amongst healthcare professionals, physical and auditory limitation of stethoscopes and no standard for auscultation data, <b>we propose a digital auscultation device that utilizes computer aided auscultation to aid healthcare professionals to screen and diagnose cardiopulmonary conditions.</b>
+            <br><br>
+            Additionally, subjectivity in interpretation of chest sounds, inter-listener variability and inconsistency, and effects of ambient environment noise​ all further justify the need for a product like ours to exist.
+            </p>
           </section>
 
 
-          <section class="docs-section" id="item-2-1-1">
+          <!-- <section class="docs-section" id="item-2-1-1">
             <h2 class="section-heading">Section Item 2.1.1</h2>
             <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
               Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
@@ -968,21 +976,138 @@
               imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
               porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
               est. Vestibulum ultricies malesuada tempor.</p>
-          </section>
+          </section> -->
 
 
           <section class="docs-section" id="item-2-2">
-            <h2 class="section-heading">Section Item 2.2</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+            <h2 class="section-heading">Goals and Objectives: </h2>
+            <ul>
+              <li>
+                <p>Must have an audio sampling rate of 44.1kHz (based on the Nyquist Sampling Theorem)</p>
+              </li>
+              <li>
+                <p>Latency < 100ms </p>
+              </li>
+              <li>
+                <p>Final manufacturing cost less than $200</p>
+              </li>
+              <li>
+                <p>5 Hours of battery life</p>
+              </li>
+              <li>
+                <p>Can pick up all cardiopulmonary sounds (20-3000Hz)</p>
+              </li>
+              <li>
+                <p>Lossless Audio (no data loss due to compression)</p>
+              </li>
+              <li>
+                <p>Durable design and material selection</p>
+              </li>
+            </ul>
+            <br>
           </section>
 
 
           <section class="docs-section" id="item-2-3">
-            <h2 class="section-heading">Section Item 2.3</h2>
+            <h2 class="section-heading">Constraints and Criteria</h2>
+            <h5>Constraints: </h5>
+            <ul>
+              <li>
+                <p>Must not exceed dangerous hearing limits (70dB)​</p>
+              </li>
+              <li>
+                <p>Weight of handheld unit must not be too heavy (less than 500g)</p>
+              </li>
+              <li>
+                <p>Must not exceed capstone budget ($600)</p>
+              </li>
+              <li>
+                <p>Sized for adult auscultation</p>
+              </li>
+              <li>
+                <p>Sound recording of more than five seconds</p>
+              </li>
+            </ul>
+            <br>
+            <h5>Criteria: </h5>
+            <ul>
+              <li>
+                <p>Must have the entire frequency range of cardiopulmonary sounds</p>
+              </li>
+              <li>
+                <p>Data visualization/storage (telehealth)</p>
+              </li>
+              <li>
+                <p>Sound output and amplification</p>
+              </li>
+              <li>
+                <p>Portable</p>
+              </li>
+              <li>
+                <p>Battery Powered</p>
+              </li>
+              <li>
+                <p>A way to differentiate between cardio and pulmonary frequency ranges</p>
+              </li>
+              <li>
+                <p>Easy to clean</p>
+              </li>
+              <li>
+                <p>Ergonomic</p>
+              </li>
+            </ul>
+          </section>
+
+          <section class="docs-section" id="item-2-4">
+            <h2 class="section-heading">Project Timeline</h2>
+            <ul>
+              <li>
+                <p>Initial detailed design (Oct. 16th - Nov. 3rd) <span class="badge bg-success">Complete</span></p>
+              </li>
+              <li>
+                <p>Component selection and test (Nov. 3rd - Nov. 10th) <span class="badge bg-success">Complete</span></p>
+              </li>
+              <li>
+                <p>Initial proof of concept design (Nov. 10th - Dec. 1st) <span class="badge bg-success">Complete</span></p>
+              </li>
+              <li>
+                <p>Proof of Concept test (Jan. 1st - Jan. 7th) <span class="badge bg-info">In Progress</span></p>
+              </li>
+              <li>
+                <p>Mechanical, physical and prototype design (Jan. 7th - Jan. 31st) <span class="badge bg-info">In Progress</span></p>
+              </li>
+              <li>
+                <p>Test and re-evaluate (Feb. 1st - Project Deadline) <span class="badge bg-info">Future</span></p>
+              </li>
+            </ul>
+          </section>
+
+        </article>
+
+        <article class="docs-article" id="section-3">
+          <header>
+            <h1 class="docs-heading">Engineering Design</h1>
+            <section class="docs-intro">
+              <p>This section will cover all detailed engineering design. For now, the two main areas we will be covering is Electroacoustic Signal Processing and Mechanical Design, but more topics will come up in the future (e.g., Battery Management, Software Design).</p>
+              <br>
+            </section>
+          </header>
+
+          <section id="item-3-1">
+            <h1 class="section-heading">Electroacoustic Signal Processing</h1>
+            <p>This section will cover everything related to the detection and processing of auscultation signals.</p>
+          </section>
+
+          <section class="docs-section" id="item-3-1-1">
+            <h2 class="section-heading">Block Diagrams</h2>
+            <p>Here, we start with the high level signal flow in our system. We start with the raw analog signal of the bodily sounds. This signal is fed into an analog circuit. It is converted into a digital signal using an ADC, and then sent on for digital processing. After digital processing, it is sent to the desktop application for visualization and storage (telehealth).</p>
+            <img src="assets/high_level_sig_flow.png" 
+              class="mb-3 img-fluid img-thumbnail">
+          </section>
+
+
+          <section class="docs-section" id="item-3-1-2">
+            <h2 class="section-heading">Filter Design</h2>
             <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
               Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
               imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
@@ -990,22 +1115,9 @@
               est. Vestibulum ultricies malesuada tempor.</p>
           </section>
 
-        </article>
 
-
-        <article class="docs-article" id="section-3">
-          <header class="docs-header">
-            <h1 class="docs-heading">APIs</h1>
-            <section class="docs-intro">
-              <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus
-                condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh
-                convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce
-                in malesuada odio.</p>
-            </section>
-          </header>
-
-          <section class="docs-section" id="item-3-1">
-            <h2 class="section-heading">Section Item 3.1</h2>
+          <section class="docs-section" id="item-3-1-3">
+            <h2 class="section-heading">Component Selection</h2>
             <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
               Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
               imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
@@ -1015,7 +1127,16 @@
 
 
           <section class="docs-section" id="item-3-2">
-            <h2 class="section-heading">Section Item 3.2</h2>
+            <h2 class="section-heading">Mechanical Design</h2>
+            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
+              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
+              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
+              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
+              est. Vestibulum ultricies malesuada tempor.</p>
+          </section>
+
+          <section class="docs-section" id="item-3-2-1">
+            <h2 class="section-heading">Main Body</h2>
             <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
               Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
               imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
@@ -1024,14 +1145,34 @@
           </section>
 
 
-          <section class="docs-section" id="item-3-3">
-            <h2 class="section-heading">Section Item 3.3</h2>
+          <section class="docs-section" id="item-3-2-2">
+            <h2 class="section-heading">Mic Interface</h2>
             <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
               Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
               imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
               porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
               est. Vestibulum ultricies malesuada tempor.</p>
           </section>
+
+
+          <section class="docs-section" id="item-3-2-3">
+            <h2 class="section-heading">FEA</h2>
+            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
+              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
+              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
+              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
+              est. Vestibulum ultricies malesuada tempor.</p>
+          </section>
+
+
+          <!-- <section class="docs-section" id="item-3-3">
+            <h2 class="section-heading">Battery</h2>
+            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
+              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
+              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
+              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
+              est. Vestibulum ultricies malesuada tempor.</p>
+          </section> -->
 
         </article>
 
