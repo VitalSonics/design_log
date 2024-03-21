@@ -287,6 +287,9 @@
               <li class="nav-item">
                 <a class="nav-link scrollto" href="#item-1-7">Log Entry 7 - 02/10/24</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link scrollto" href="#item-1-8">Log Entry 8 - 03/20/24</a>
+              </li>
               <!-- <li class="nav-item">
                 <a class="nav-link scrollto" href="#item-1-6">Section Item 1.6</a>
               </li> -->
@@ -970,6 +973,32 @@
               <source src="assets/VitalSonics-recording-20kHz.wav" type="audio/wav">
             Your browser does not support the audio element.
             </audio> 
+
+          </section>
+
+          <section class="docs-section" id="item-1-8">
+            <h2 class="section-heading">Log Entry 8 - 03/20/24</h2>
+            <p>
+              The frequency range that the sounds listened to for auscultation are limited. Pulmonary sounds exist in the frequency range of 100-1000Hz, and cardio sounds exist from 0-650Hz. By filtering sounds that do not exist in this frequency range, distracting ambient noise from the surrounding environment and unnecessary sounds of the patient’s body picked up by the microphone can be greatly reduced. This then enables the safe amplification of the unfiltered sounds to aid further with auscultation. 
+            </p>
+
+            <p>
+              Sixth order lowpass Butterworth filters were implemented directly on the ESP32 board to cut off the upper limit of these frequency ranges. The filters were designed for both the 44.1kHz standalone mode and the 20kHz recording modes. Their bode plots can be seen below.
+            </p>
+
+            <img src="assets/PulmonarySerial.jpg" class="mb-3 img-fluid img-thumbnail" data-action="zoom"> 
+            <img src="assets/SerialCardiac.jpg" class="mb-3 img-fluid img-thumbnail" data-action="zoom">
+            <img src="assets/StandalonePulmonary.jpg" class="mb-3 img-fluid img-thumbnail" data-action="zoom">
+            <img src="assets/StandaloneCardiac.jpg" class="mb-3 img-fluid img-thumbnail" data-action="zoom">
+
+            <p>
+              To ensure proper functionality of these filters, they were tested in isolation from the separate system components. Sin waves over a set frequency range were processed by the filters and the resulting gain was plotted. These plots can be seen below. 
+            </p>
+
+            <img src="assets/PulmonarySerialTest.jpg" class="mb-3 img-fluid img-thumbnail" data-action="zoom">
+            <img src="assets/CardiacSerialTest.jpg" class="mb-3 img-fluid img-thumbnail" data-action="zoom">
+            <img src="assets/StandalonePulmonaryTest.jpg" class="mb-3 img-fluid img-thumbnail" data-action="zoom">
+            <img src="assets/StandaloneCardioTest.jpg" class="mb-3 img-fluid img-thumbnail" data-action="zoom">
 
           </section>
 
