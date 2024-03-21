@@ -290,6 +290,9 @@
               <li class="nav-item">
                 <a class="nav-link scrollto" href="#item-1-8">Log Entry 8 - 03/20/24</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link scrollto" href="#item-1-9">Log Entry 9 - 03/21/24</a>
+              </li>
               <!-- <li class="nav-item">
                 <a class="nav-link scrollto" href="#item-1-6">Section Item 1.6</a>
               </li> -->
@@ -999,6 +1002,63 @@
             <img src="assets/CardiacSerialTest.jpg" class="mb-3 img-fluid img-thumbnail" data-action="zoom">
             <img src="assets/StandalonePulmonaryTest.jpg" class="mb-3 img-fluid img-thumbnail" data-action="zoom">
             <img src="assets/StandaloneCardioTest.jpg" class="mb-3 img-fluid img-thumbnail" data-action="zoom">
+
+          </section>
+
+          <section class="docs-section" id="item-1-9">
+            <h2 class="section-heading">Log Entry 9 - 03/21/24</h2>
+            <h3 class="section-subheading">
+              Creating an Audio Streaming and Processing Application with PySide6 and PyQtGraph
+            </h3>
+            <p>
+              In this article, we'll dive into the implementation of an audio streaming and processing application built using PySide6, PyQtGraph, and various other libraries in Python. This application allows users to stream audio data from a connected device, visualize the audio waveform and its frequency spectrum in real-time, and process the streamed audio data. 
+            </p>
+            <p>
+              Let's break down the main components and functionalities of the code: 
+            </p>
+
+            <h4 class="section-subheading">Initialization and Configuration</h4>
+            <p>
+              The code starts by importing necessary libraries such as PySide6 for GUI development, PyQtGraph for plotting, and other utilities. It also defines configurable parameters such as serial port settings, audio sample rate, chunk size, and file names. 
+            </p>
+
+            <h4 class="section-subheading">Streaming Thread </h4>
+            <p>
+              A StreamingThread class is defined to handle the streaming of audio data from a connected device. This thread continuously reads audio data from the serial port, updates global audio buffers, and emits signals to update the UI with the latest audio data. 
+            </p>
+
+            <h4 class="section-subheading">Audio Player</h4>
+            <p>
+              The AudioPlayer class manages audio playback from a WAV file in a Qt application. It utilizes threading for playback, emits signals for UI updates, and provides methods for controlling playback state and seeking to specific positions within the audio file. This class effectively handles audio playback within the application, ensuring smooth user interaction.
+            </p>
+
+            <h4 class="section-subheading">Audio Processor </h4>
+            <p>
+              An AudioProcessor class processes received audio data asynchronously from the Audio Player. It processes incoming audio data, updates the global audio buffers, and emits signals to update the UI. 
+            </p>
+
+            <h4 class="section-subheading">Main Window Class </h4>
+            <p>
+              The MainWindowClass class represents the main window of the application. It initializes the UI components, sets up the streaming and processing functionalities, and handles user interactions. 
+            </p>
+
+            <h4 class="section-subheading">User Interface </h4>
+            <p>
+              The user interface consists of widgets for displaying the audio waveform and frequency spectrum plots using PyQtGraph. Users can interact with the application through buttons to start/stop recording, load WAV files, and control playback. 
+            </p>
+
+            <h4 class="section-subheading">Functionality </h4>
+            <ul>
+              <li>Users can start and stop recording audio data from a connected device. </li>
+              <li>Audio data is streamed and displayed in real-time on the waveform and frequency spectrum plots. </li>
+              <li>Users can load WAV files for playback and visualization. </li>
+              <li>Playback controls allow users to pause, resume, and stop audio playback. </li>
+            </ul>
+            
+            <h4 class="section-subheading">Conclusion </h4>
+            <p>
+              In summary, this Python application provides a comprehensive solution for streaming, processing, and visualizing audio data in real-time. It offers a user-friendly interface for controlling audio recording and playback, making it suitable for various audio analysis and processing tasks.  
+            </p>
 
           </section>
 
