@@ -293,6 +293,9 @@
               <li class="nav-item">
                 <a class="nav-link scrollto" href="#item-1-9">Log Entry 9 - 03/21/24</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link scrollto" href="#item-1-10">Log Entry 10 - 03/22/24</a>
+              </li>
               <!-- <li class="nav-item">
                 <a class="nav-link scrollto" href="#item-1-6">Section Item 1.6</a>
               </li> -->
@@ -1062,6 +1065,61 @@
 
           </section>
 
+          <section class="docs-section" id="item-1-10">
+            <h2 class="section-heading">Log Entry 10 - 03/22/24</h2>
+            <h3 class="section-subheading">
+              Making the device battery powered and USB-C rechargeable
+            </h3>
+            <p>
+              The device must be battery powered because it must be portable and not require a wired connection to a laptop. As such, the obvious method to power the microcontroller given the device's physical constraints (must be handheld) is to power it using batteries.
+            </p>
+
+            <h4 class="section-subheading">Battery Selection</h4>
+            <p>
+              After comparing various types of rechargeable batteries, it was determined that a LiPo battery would best suit our needs. LiPo batteries are known for being lightweight, yet still able to provide power for a reasonable amount of time. This is evident by the extensive use of LiPo batteries in drones.
+              <br><br>
+
+              For this project, a 3.7V 600mAh battery was selected. The dimensions of the battery are 42mm x 25mm x 8mm, so this is perfectly packaged for our device. 
+            </p>
+
+            <img src="assets/battery.png" class="mb-3 img-fluid img-thumbnail" data-action="zoom"> 
+
+            <h4 class="section-subheading">Powering the ESP32-DEVKITC-32E </h4>
+            <p>
+              Reading datasheets for the ESP32 DevKitC revealed a heap of useful information. The ESP32 DevKitC has two voltage input pins, 3.3V and 5V. The devkit does have an LDO (low dropout) voltage regulator on board, but there is a caveat. Input voltage only goes through the LDO regulator if the input voltage is supplied through the 5V input pin.
+              <br><br>
+              The LDO voltage regulator is needed to buck the voltage down to 3.3V for the mic input voltage.
+              <br><br>
+              Due to the constraint of the LDO regulator and the size constraints of the device preventing us from using a bigger battery, a boost converter was needed.
+              <br><br>
+              The idea is as follows: Boost the LiPo battery voltage from 3.7V to above 5V. Feed the 5V+ voltage into the 5V pin on the ESP32 DevKitC. Then, the ESP32 DevKitC will handle the bucking of the voltage down to 3.3V.
+              <br><br>
+              For this purpose, a DC-DC battery boost module was purchased, shown below. This boost converter boosts the voltage up to 5V, which is the fed into the 5V input pin on the ESP32 DevKitC, and then properly bucked down to 3.3V via the on board LDO regulator.
+            </p>
+
+            <img src="assets/boost.png" class="mb-3 img-fluid img-thumbnail" data-action="zoom"> 
+
+            <h4 class="section-subheading">Making it rechargable</h4>
+            <p>
+              Finally, the last step was to make the whole system rechargeable. One of the requirements of the device is to use USB-C for recharging, due to its widespread adoption worldwide. As such, a USB-C charging module was purchased.
+
+              <br><br>
+
+              We had to ensure that the charging module we selected had built in over-current and over-voltage protection to make the device as safe as possible. After reviewing several candidates, we went with a charging module that uses the TP4056 IC. This module has the appropriate over-current and over-voltage protections, and is USB-C compatible. See picture below.
+            </p>
+
+            <img src="assets/tp4056.png" class="mb-3 img-fluid img-thumbnail" data-action="zoom"> 
+
+            <h4 class="section-subheading">Putting it all together</h4>
+            <p>
+              Overall, the entire power management system is as follows: 3.7V LiPo Battery -> TP4056 USB-C Charging Module -> Switch -> Boost Converter -> ESP32-DEVKITC-32E
+              <br><br>
+              The final power management system can be seen pictured below.
+            </p>
+
+            <img src="assets/power.JPG" class="mb-3 img-fluid img-thumbnail" data-action="zoom"> 
+          </section>
+
           <!-- <section class="docs-section" id="item-1-6">
             <h2 class="section-heading">Section Item 1.6</h2>
             <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
@@ -1229,7 +1287,7 @@
           <header>
             <h1 class="docs-heading">Engineering Design</h1>
             <section class="docs-intro">
-              <p>This section will cover all detailed engineering design. For now, the two main areas we will be covering is Electroacoustic Signal Processing and Mechanical Design, but more topics will come up in the future (e.g., Battery Management, Software Design).</p>
+              <p>This section will cover detailed engineering design.</p>
               <br>
             </section>
           </header>
